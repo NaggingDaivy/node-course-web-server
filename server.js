@@ -34,14 +34,6 @@ hbs.registerHelper('screamIt', (text) => text.toUpperCase()); //possibilité d'u
 
 app.get("/", (req, res) => { // res 
 
-    // res.send('<h1>Hello express</h1>');
-    // res.send({
-    //     name:'Daivy',
-    //     likes: [
-    //         'Games',
-    //         'Movies'
-    //     ]
-    // });
     res.render('home.hbs', {
         pageTitle: 'Home Page',
         welcomeMessage: "You are to the home page !",
@@ -56,12 +48,19 @@ app.get('/about', (req, res) => {
 
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects',
+    });
+
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         error: "Unable to fulfill the request"
     });
 })
 
-app.listen(port, () => { // 3000 sera une variable d'environnement
+app.listen(port, () => { // 3000 sera une variable d'environnement qui sera setté par hedoku
     console.log(`Server is up on port ${port}`);
 });
