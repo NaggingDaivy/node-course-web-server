@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const port = process.env.PORT || 3000; // toute les variables d'environnement, si PORT n'existe pas, on met 3000 par défaut
+const port = process.env.PORT || 3000; // toute les variables d'environnement, si PORT n'existe pas, on met 3000 par défaut. Le port sera mis automatioquement par Hedoku
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials') // indique l'endroit des partials
