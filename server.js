@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-
+const port = process.env.PORT || 3000; // toute les variables d'environnement, si PORT n'existe pas, on met 3000 par défaut
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials') // indique l'endroit des partials
@@ -62,6 +62,6 @@ app.get('/bad', (req, res) => {
     });
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => { // 3000 sera une variable d'environnement
+    console.log(`Server is up on port ${port}`);
 });
